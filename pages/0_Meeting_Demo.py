@@ -21,8 +21,8 @@ if uploaded_file and anthropic_api_key:
     print(transcription)
 
 
-if uploaded_file and question and not anthropic_api_key:
-    st.info("Please add your Openai API key to continue.")
+# if uploaded_file and question and not anthropic_api_key:
+#     st.info("Please add your Openai API key to continue.")
 
 def key_points_extraction(transcription):
     response = openai.ChatCompletion.create(
