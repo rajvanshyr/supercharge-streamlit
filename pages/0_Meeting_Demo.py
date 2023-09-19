@@ -20,11 +20,6 @@ if uploaded_file and anthropic_api_key:
     transcription = openai.Audio.transcribe("whisper-1", uploaded_file)
     print(transcription)
 
-question = st.text_input(
-    "Ask something about the article",
-    placeholder="Can you give me a short summary?",
-    disabled=not uploaded_file,
-)
 
 if uploaded_file and question and not anthropic_api_key:
     st.info("Please add your Openai API key to continue.")
