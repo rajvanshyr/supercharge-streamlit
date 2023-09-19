@@ -8,7 +8,7 @@ def transcribe_audio(audio_file_path):
     return transcription['text']
 
 with st.sidebar:
-    anthropic_api_key = st.text_input("Anthropic API Key", key="file_qa_api_key", type="password")
+    anthropic_api_key = st.text_input("Openai API Key", key="file_qa_api_key", type="password")
     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/pages/1_File_Q%26A.py)"
     "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
@@ -27,7 +27,7 @@ question = st.text_input(
 )
 
 if uploaded_file and question and not anthropic_api_key:
-    st.info("Please add your Anthropic API key to continue.")
+    st.info("Please add your Openai API key to continue.")
 
 def key_points_extraction(transcription):
     response = openai.ChatCompletion.create(
@@ -46,6 +46,9 @@ def key_points_extraction(transcription):
     )
     return response['choices'][0]['message']['content']
 
+option = st.selectbox(
+    'How would you like to be contacted?',
+    ('Email', 'Home phone', 'Mobile phone'))
 
 if uploaded_file and question and anthropic_api_key:
     openai.api_key= anthropic_api_key
