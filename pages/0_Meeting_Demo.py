@@ -48,9 +48,9 @@ def key_points_extraction(transcription):
 
 option = st.selectbox(
     'How would you like to be contacted?',
-    ('Email', 'Home phone', 'Mobile phone'))
+    ('Email', 'Summarize', 'Mobile phone'))
 
-if uploaded_file and question and anthropic_api_key:
+if uploaded_file and option =='Summarize' and anthropic_api_key:
     openai.api_key= anthropic_api_key
     response=key_points_extraction(transcription['text'])
     st.write("### Answer")
