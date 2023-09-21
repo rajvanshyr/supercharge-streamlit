@@ -18,7 +18,7 @@ if st.button("Generate Music"):
 	prom= "Generate the next line for a rap song for reference this is the previous line "+txt
 	st.write(prom)
 #st.write('Sentiment:', run_sentiment_analysis(txt))
-
+	openai.api_key= anthropic_api_key
 	response = openai.Completion.create(
 		engine="text-davinci-003",
 		prompt=prom,
