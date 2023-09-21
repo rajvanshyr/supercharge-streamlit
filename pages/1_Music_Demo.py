@@ -14,3 +14,13 @@ if st.button("Generate Music"):
 	st.write(prom)
 #st.write('Sentiment:', run_sentiment_analysis(txt))
 
+	response = openai.Completion.create(
+		engine="text-davinci-003",
+		prompt=prom,
+		temperature=0.6,
+		max_tokens=60,
+		top_p=1,
+		frequency_penalty=0,
+		presence_penalty=0
+	)
+	st.write(response["choices"][0]['text'])
