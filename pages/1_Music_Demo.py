@@ -13,12 +13,16 @@ txt = st.text_area('Text to analyze')
 
 
 if st.button("Generate Music"):
-	st.write('Calling APi with following txt')
-	st.write(txt)
+	#st.write('Calling APi with following txt')
+	#st.write(txt)
 	prom= "Generate the next line for a rap song for reference this is the previous line "+txt
-	st.write(prom)
+	#st.write(prom)
 #st.write('Sentiment:', run_sentiment_analysis(txt))
 	openai.api_key= anthropic_api_key
+	word_list = txt.split() 
+	last=word_list[-1]
+	url = "https://api.datamuse.com/words?rel_rhy="+last
+	st.write(url)
 	response = openai.Completion.create(
 		engine="text-davinci-003",
 		prompt=prom,
