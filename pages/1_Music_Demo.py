@@ -1,5 +1,9 @@
 import streamlit as st
 import openai
+import requests 
+
+
+
 
 with st.sidebar:
     anthropic_api_key = st.text_input("Openai API Key", key="file_qa_api_key", type="password")
@@ -22,7 +26,14 @@ if st.button("Generate Music"):
 	word_list = txt.split() 
 	last=word_list[-1]
 	url = "https://api.datamuse.com/words?rel_rhy="+last
+
+	payload={}
+	headers = {}
+
+	response = requests.request("GET", url, headers=headers, data=payload)
 	st.write(url)
+	word=response.json()[0]["word"]
+	st.write(word)
 	response = openai.Completion.create(
 		engine="text-davinci-003",
 		prompt=prom,
