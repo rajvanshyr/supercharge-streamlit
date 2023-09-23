@@ -38,7 +38,9 @@ if st.button("Generate Music"):
 	st.write(word)
 	word=word["word"]
 	#prom= "Generate the next line for a rap song for reference this is the previous line "+txt+" "
-	prom= f'Generate the next line for a rap song that ends with {word} , for reference this is the previous line {txt}'
+	prom= f'Generate the next line for a rap song that ends with {word}. Make sure to extract the theme and reference \
+	it in the line you generate \
+	for reference this is the previous line: {txt} . '
 	st.write(prom)
 	response = openai.Completion.create(
 		engine="text-davinci-003",
