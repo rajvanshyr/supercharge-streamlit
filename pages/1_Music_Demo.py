@@ -1,6 +1,7 @@
 import streamlit as st
 import openai
-import requests 
+import requests
+import random
 
 
 
@@ -32,8 +33,11 @@ if st.button("Generate Music"):
 
 	response = requests.request("GET", url, headers=headers, data=payload)
 	st.write(url)
-	word=response.json()[0]["word"]
+	#word=response.json()[0]["word"]
+	li=response.json()
+	word=random.choice(word)
 	st.write(word)
+	word=word["word"]
 	#prom= "Generate the next line for a rap song for reference this is the previous line "+txt+" "
 	prom= "Generate the next line for a rap song that ends with "+word+" , for reference this is the previous line "+txt
 
