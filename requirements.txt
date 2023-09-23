@@ -5,4 +5,4 @@ pydeck
 streamlit
 openai==0.27.7
 requests
-syllables
+syllables==1.0.7
