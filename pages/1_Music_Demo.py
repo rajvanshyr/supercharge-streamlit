@@ -5,7 +5,6 @@ import random
 
 
 
-
 with st.sidebar:
     anthropic_api_key = st.text_input("Openai API Key", key="file_qa_api_key", type="password")
     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/pages/1_File_Q%26A.py)"
@@ -39,8 +38,8 @@ if st.button("Generate Music"):
 	st.write(word)
 	word=word["word"]
 	#prom= "Generate the next line for a rap song for reference this is the previous line "+txt+" "
-	prom= "Generate the next line for a rap song that ends with "+word+" , for reference this is the previous line "+txt
-
+	prom= f'Generate the next line for a rap song that ends with {word} , for reference this is the previous line {txt}'
+	st.write(prom)
 	response = openai.Completion.create(
 		engine="text-davinci-003",
 		prompt=prom,
