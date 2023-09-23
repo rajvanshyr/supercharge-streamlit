@@ -35,7 +35,7 @@ if st.button("Generate Music"):
 	st.write(url)
 	#word=response.json()[0]["word"]
 	li=response.json()
-	word=random.choice(word)
+	word=random.choice(li)
 	st.write(word)
 	word=word["word"]
 	#prom= "Generate the next line for a rap song for reference this is the previous line "+txt+" "
