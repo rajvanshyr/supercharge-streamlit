@@ -2,6 +2,7 @@ import streamlit as st
 import openai
 import requests
 import random
+import syllables
 
 
 
@@ -37,8 +38,9 @@ if st.button("Generate Music"):
 	word=random.choice(li)
 	st.write(word)
 	word=word["word"]
+	nS=syllables.estimate(txt)
 	#prom= "Generate the next line for a rap song for reference this is the previous line "+txt+" "
-	prom= f'Generate the next line for a rap song that ends with {word}. Make sure to extract the theme and reference \
+	prom= f'Generate the next line for a rap song that ends with {word} and has {ns} syllables. Make sure to extract the theme and reference \
 	it in the line you generate \
 	for reference this is the previous line: {txt} . '
 	st.write(prom)
