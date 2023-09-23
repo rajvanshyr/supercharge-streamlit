@@ -3,6 +3,7 @@ import openai
 import requests
 import random
 import syllables
+from streamlit_text_rating.st_text_rater import st_text_rater
 
 
 
@@ -53,4 +54,11 @@ if st.button("Generate Music"):
 		frequency_penalty=0,
 		presence_penalty=0
 	)
-	st.write(response["choices"][0]['text'])
+	#st.write(response["choices"][0]['text'])
+	response = st_text_rater(text=response["choices"][0]['text'])
+	st.write(f"response --> {response}")
+
+
+
+
+
