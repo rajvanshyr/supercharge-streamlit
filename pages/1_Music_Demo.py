@@ -18,7 +18,7 @@ txt = st.text_area('Text to analyze')
 #st.button("Generate Music", type="primary")
 
 
-if st.button("Generate Music"):
+if st.button("Generate Music") or rating:
 	#st.write('Calling APi with following txt')
 	#st.write(txt)
 	
@@ -56,7 +56,7 @@ if st.button("Generate Music"):
 	)
 	st.write(response["choices"][0]['text'])
 	values = st.slider('Rate this line:', 0, 100, 25)
-	st.write('Rating:', values)
+	#st.write('Rating:', values)
 	#response = st_text_rater(text=response["choices"][0]['text'])
 	#st.write(response)
 	#st.write(f"response --> {response}")
