@@ -64,5 +64,6 @@ if st.button("Generate Music"):
 	
 
 st.write('Staying')
-
+if st.button("Stay Music"):
+	st.write('Hiii')
 
