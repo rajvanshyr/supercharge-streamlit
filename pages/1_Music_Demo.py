@@ -60,7 +60,8 @@ if st.button("Generate Music") or rating:
 	#response = st_text_rater(text=response["choices"][0]['text'])
 	#st.write(response)
 	#st.write(f"response --> {response}")
-	rating=st.write('Rating:', values)
+	st.write(values)
+	rating=values
 	st.stop()
 	
 
