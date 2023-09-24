@@ -54,9 +54,11 @@ if st.button("Generate Music"):
 		frequency_penalty=0,
 		presence_penalty=0
 	)
-	#st.write(response["choices"][0]['text'])
-	response = st_text_rater(text=response["choices"][0]['text'])
-	st.write(response)
+	st.write(response["choices"][0]['text'])
+	values = st.slider('Rate this line:', 0, 100, 25)
+	st.write('Rating:', values)
+	#response = st_text_rater(text=response["choices"][0]['text'])
+	#st.write(response)
 	#st.write(f"response --> {response}")
 
 
