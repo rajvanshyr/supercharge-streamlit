@@ -61,8 +61,8 @@ if st.button("Generate Music"):
 	#st.write(response)
 	#st.write(f"response --> {response}")
 	st.write('Rating:', values)
-	st.write('Staying')
+	
 
-
+st.write('Staying')
 
 
