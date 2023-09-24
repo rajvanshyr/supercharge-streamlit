@@ -17,7 +17,7 @@ st.title("📝 Music Generation")
 txt = st.text_area('Text to analyze')
 #st.button("Generate Music", type="primary")
 
-
+rating=None
 if st.button("Generate Music") or rating:
 	#st.write('Calling APi with following txt')
 	#st.write(txt)
