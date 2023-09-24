@@ -4,6 +4,7 @@ import requests
 import random
 import syllables
 from streamlit_text_rating.st_text_rater import st_text_rater
+import time
 
 
 
@@ -62,6 +63,7 @@ if st.button("Generate Music") or rating:
 	#st.write(f"response --> {response}")
 	st.write(values)
 	rating=values
+	time.sleep(100)
 	st.stop()
 	
 
