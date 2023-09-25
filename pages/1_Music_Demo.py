@@ -63,7 +63,7 @@ if st.button("Generate Music") or rating:
 	#st.write(f"response --> {response}")
 	st.write(values)
 	rating=values
-	time.sleep(100)
+	time.sleep(1)
 	#st.stop()
 	st.write("done sleeping")
 
