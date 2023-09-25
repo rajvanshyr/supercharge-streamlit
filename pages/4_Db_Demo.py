@@ -44,5 +44,5 @@ CREATE TABLE IF NOT EXISTS users (
 );
 """
 
-execute_query(connection, create_users_table)  
+execute=execute_query(connection, create_users_table)  
 
