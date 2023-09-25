@@ -29,10 +29,9 @@ def execute_query(connection, query):
 	try:
 		cursor.execute(query)
 		connection.commit()
-		print("Query executed successfully")
+		st.write("Query successful")
 	except Error as e:
-		print(f"The error '{e}' occurred")
-
+		st.write('Below is error:', e, 'Above is a error.')
 
 
 create_users_table = """
