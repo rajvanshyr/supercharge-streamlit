@@ -49,6 +49,7 @@ if uploaded_file and option =='Summarize Action Items' and anthropic_api_key:
     t=""
     
     chunk_length_ms = 20000 # pydub calculates in millisec
+    myaudio = AudioSegment.from_file(uploaded_file , "wav") 
     chunks = make_chunks(myaudio, chunk_length_ms)
     for i, chunk in enumerate(chunks):
         chunk_name = "chunk{0}.wav".format(i)
