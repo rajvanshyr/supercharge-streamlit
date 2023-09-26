@@ -17,8 +17,6 @@ uploaded_file = st.file_uploader("Upload an Meeting FIle", type=("txt", "wav"))
 
 if uploaded_file and anthropic_api_key:
     openai.api_key= anthropic_api_key
-    transcription = openai.Audio.transcribe("whisper-1", uploaded_file)
-    print(transcription)
 
 
 # if uploaded_file and question and not anthropic_api_key:
@@ -47,6 +45,8 @@ option = st.selectbox(
 
 if uploaded_file and option =='Summarize Action Items' and anthropic_api_key:
     openai.api_key= anthropic_api_key
+    transcription = openai.Audio.transcribe("whisper-1", uploaded_file)
+    print(transcription)
     response=key_points_extraction(transcription['text'])
     st.write("### Answer")
     st.write(response)
