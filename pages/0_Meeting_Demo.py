@@ -1,5 +1,6 @@
 import streamlit as st
 import openai
+from pydub.utils import make_chunks
 
 
 def transcribe_audio(audio_file_path):
@@ -45,9 +46,21 @@ option = st.selectbox(
 
 if uploaded_file and option =='Summarize Action Items' and anthropic_api_key:
     openai.api_key= anthropic_api_key
-    transcription = openai.Audio.transcribe("whisper-1", uploaded_file)
-    print(transcription)
-    response=key_points_extraction(transcription['text'])
+    t=""
+    
+    chunk_length_ms = 20000 # pydub calculates in millisec
+    chunks = make_chunks(myaudio, chunk_length_ms)
+    for i, chunk in enumerate(chunks):
+        chunk_name = "chunk{0}.wav".format(i)
+        print("exporting"+ chunk_name)
+        chunk.export(chunk_name, format="wav")
+
+    x=transcribe_audio("chunk0.wav")    
+    #chunk.export(chunk_name, format="wav")
+
+    st.write("### Transcription")
+    st.write(x)
+    response=key_points_extraction(x)
     st.write("### Answer")
     st.write(response)
 
