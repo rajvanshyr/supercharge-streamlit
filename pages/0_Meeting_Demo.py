@@ -1,6 +1,7 @@
 import streamlit as st
 import openai
 from pydub.utils import make_chunks
+from pydub import AudioSegment
 
 
 def transcribe_audio(audio_file_path):
