@@ -42,7 +42,7 @@ def key_points_extraction(transcription):
     return response['choices'][0]['message']['content']
 
 option = st.selectbox(
-    'How would you like to be contacted?',
+    'What do you want to do?',
     ('Get More details on Topic', 'Summarize Action Items'))
 
 if uploaded_file and option =='Summarize Action Items' and anthropic_api_key:
@@ -59,12 +59,20 @@ if uploaded_file and option =='Summarize Action Items' and anthropic_api_key:
         chunk.export(chunk_name, format="wav")
 
 
-    x=transcribe_audio("chunk0.wav")    
+    x=transcribe_audio("chunk0.wav")
+    r=""
+    for a in range(0,i+1):
+        s=f"chunk{a}.wav"
+        print(s)
+        t=transcribe_audio(s)
+        r+=t
+    #print(r)
+
     #chunk.export(chunk_name, format="wav")
 
     st.write("### Transcription")
-    st.write(x)
-    response=key_points_extraction(x)
+    st.write(r)
+    response=key_points_extraction(r)
     st.write("### Answer")
     st.write(response)
 
