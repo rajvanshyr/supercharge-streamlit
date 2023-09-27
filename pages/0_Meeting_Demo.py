@@ -46,6 +46,7 @@ option = st.selectbox(
     ('Get More details on Topic', 'Summarize Action Items'))
 
 if uploaded_file and option =='Summarize Action Items' and anthropic_api_key:
+    st.write("### Running")
     openai.api_key= anthropic_api_key
     t=""
     
@@ -56,6 +57,7 @@ if uploaded_file and option =='Summarize Action Items' and anthropic_api_key:
         chunk_name = "chunk{0}.wav".format(i)
         print("exporting"+ chunk_name)
         chunk.export(chunk_name, format="wav")
+
 
     x=transcribe_audio("chunk0.wav")    
     #chunk.export(chunk_name, format="wav")
