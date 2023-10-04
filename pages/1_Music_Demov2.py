@@ -45,6 +45,7 @@ if st.button("Generate Music") and not st.session_state.music_generated:
 
 # Separating slider logic from button logic
 if st.session_state.music_generated:
+    st.write(response["choices"][0]['text'])
     values = st.slider('Rate this line:', 0, 100, 25)
     st.session_state.rating = values
     # The sleep is likely unnecessary but you can uncomment it if needed
