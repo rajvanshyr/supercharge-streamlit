@@ -9,6 +9,10 @@ import time
 if 'rating' not in st.session_state:
     st.session_state.rating = None
 
+# Introducing new session state flag for music generation
+if 'music_generated' not in st.session_state:
+    st.session_state.music_generated = False
+
 with st.sidebar:
     anthropic_api_key = st.text_input("Openai API Key", key="file_qa_api_key", type="password")
     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/pages/1_File_Q%26A.py)"
@@ -18,7 +22,7 @@ st.title("📝 Music Generation")
 
 txt = st.text_area('Text to analyze')
 
-if st.button("Generate Music") or st.session_state.rating is not None:
+if st.button("Generate Music") and not st.session_state.music_generated:
     openai.api_key = anthropic_api_key
     word_list = txt.split() 
     last = word_list[-1]
@@ -37,9 +41,12 @@ if st.button("Generate Music") or st.session_state.rating is not None:
         presence_penalty=0
     )
     st.write(response["choices"][0]['text'])
+    st.session_state.music_generated = True
+
+# Separating slider logic from button logic
+if st.session_state.music_generated:
     values = st.slider('Rate this line:', 0, 100, 25)
     st.session_state.rating = values
-    time.sleep(1)
+    # The sleep is likely unnecessary but you can uncomment it if needed
+    # time.sleep(1)
 
-if st.button("Stay Music"):
-    st.write('Hiii')
