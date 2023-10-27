@@ -8,3 +8,4 @@ requests
 syllables==1.0.7
 streamlit-text-rating
 pydub
+langchain
