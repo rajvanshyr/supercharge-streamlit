@@ -40,5 +40,22 @@ if open_api_key and x:
 	What are the top 3 questions he is most likely to ask me? For reference this is a quick description of what they do {x}\
 	'
 	st.write('The prompt output is', prom)
+	openai.api_key= o
+	response = openai.ChatCompletion.create(
+        model="gpt-4",
+        temperature=0,
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a proficient AI with a specialty in coming up with interview questions",
+               },
+            {
+                "role": "user",
+                "content": prom
+            }
+        ]
+    )
+     re=response['choices'][0]['message']['content']
+     st.write('The Open ai response is', re)
 
 #st.write('The current movie title is', Role)
