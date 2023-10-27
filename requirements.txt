@@ -10,4 +10,4 @@ streamlit-text-rating
 pydub
 langchain
 wikipedia
-google-serp-api
+google-search-results
