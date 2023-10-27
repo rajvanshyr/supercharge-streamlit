@@ -1,7 +1,7 @@
 import streamlit as st
 
 form = st.form("my_form")
-title = st.text_input('Movie title', 'Life of Brian')
+title = form.text_input('Movie title', 'Life of Brian')
 form.slider("Inside the form")
 st.slider("Outside the form")
 
