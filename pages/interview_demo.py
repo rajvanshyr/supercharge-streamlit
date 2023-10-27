@@ -1,8 +1,12 @@
 import streamlit as st
 import openai
 from langchain.llms import OpenAI
+import os
+import langchain.agents
 
 
+
+os.environ["SERPAPI_API_KEY"]="99a28fd132fb487739324bbe3fa8fbf0a2dcebecd86cff841d4c79260aff5836"
 
 with st.sidebar:
     open_api_key = st.text_input("Openai API Key", key="file_qa_api_key", type="password")
@@ -26,5 +30,11 @@ x=form.form_submit_button("Submit")
 
 if open_api_key and x:
 	st.write("submitted")
+	d=langchain.agents.load_tools(['wikipedia','serpapi'],llm)
+	os.environ["OPENAI_API_KEY"]=open_api_key
+	llm = OpenAI(temperature=0.5)
+	a=langchain.agents.initialize_agent(d,llm,verbose=True)
+	x=a.run("Summarize what Opsera does to a non-techincal person")
+	st.write('The agent output is', x)
 
 #st.write('The current movie title is', Role)
