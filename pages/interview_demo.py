@@ -29,6 +29,7 @@ x=form.form_submit_button("Submit")
 
 
 if open_api_key and x:
+	openai.api_key=open_api_key
 	st.write("submitted")
 	llm = OpenAI(temperature=0.5)
 	d=langchain.agents.load_tools(['wikipedia','serpapi'],llm)
