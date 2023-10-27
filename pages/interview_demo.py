@@ -30,9 +30,9 @@ x=form.form_submit_button("Submit")
 
 if open_api_key and x:
 	st.write("submitted")
+	llm = OpenAI(temperature=0.5)
 	d=langchain.agents.load_tools(['wikipedia','serpapi'],llm)
 	os.environ["OPENAI_API_KEY"]=open_api_key
-	llm = OpenAI(temperature=0.5)
 	a=langchain.agents.initialize_agent(d,llm,verbose=True)
 	x=a.run("Summarize what Opsera does to a non-techincal person")
 	st.write('The agent output is', x)
