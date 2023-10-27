@@ -24,6 +24,6 @@ x=form.form_submit_button("Submit")
 
 
 if open_api_key and x:
-	print("submitted")
+	st.write(("submitted")
 
 #st.write('The current movie title is', Role)
