@@ -39,6 +39,6 @@ if open_api_key and x:
 	prom= f'I am interviewing as a {Role} position with the {Hm} at {Company}. \
 	What are the top 3 questions he is most likely to ask me? For reference this is a quick description of what they do {x}\
 	'
-	st.write('The prompt output is', p)
+	st.write('The prompt output is', prom)
 
 #st.write('The current movie title is', Role)
