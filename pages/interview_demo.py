@@ -9,9 +9,9 @@ import langchain.agents
 os.environ["SERPAPI_API_KEY"]="99a28fd132fb487739324bbe3fa8fbf0a2dcebecd86cff841d4c79260aff5836"
 
 with st.sidebar:
-    open_api_key = st.text_input("Openai API Key", key="file_qa_api_key", type="password")
-    "[View the source code](https://github.com/streamlit/llm-examples/blob/main/pages/1_File_Q%26A.py)"
-    "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
+	open_api_key = st.text_input("Openai API Key", key="file_qa_api_key", type="password")
+	"[View the source code](https://github.com/streamlit/llm-examples/blob/main/pages/1_File_Q%26A.py)"
+	"[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 st.title("Interview Help")
 
 form = st.form("my_form")
@@ -40,22 +40,22 @@ if open_api_key and x:
 	What are the top 3 questions he is most likely to ask me? For reference this is a quick description of what they do {x}\
 	'
 	st.write('The prompt output is', prom)
-	openai.api_key= o
+	openai.api_key = o
 	response = openai.ChatCompletion.create(
-        model="gpt-4",
-        temperature=0,
-        messages=[
-            {
-                "role": "system",
-                "content": "You are a proficient AI with a specialty in coming up with interview questions",
-               },
-            {
-                "role": "user",
-                "content": prom
-            }
-        ]
-    )
-     re=response['choices'][0]['message']['content']
-     st.write('The Open ai response is', re)
+		model="gpt-4",
+		temperature=0,
+		messages=[
+			{
+				"role": "system",
+				"content": "You are a proficient AI with a specialty in coming up with interview questions",
+			   },
+			{
+				"role": "user",
+				"content": prom
+			}
+		]
+	)
+	re=response['choices'][0]['message']['content']
+	st.write('The Open ai response is', re)
 
 #st.write('The current movie title is', Role)
