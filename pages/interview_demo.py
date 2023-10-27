@@ -1,4 +1,13 @@
 import streamlit as st
+import openai
+
+
+
+with st.sidebar:
+    open_api_key = st.text_input("Openai API Key", key="file_qa_api_key", type="password")
+    "[View the source code](https://github.com/streamlit/llm-examples/blob/main/pages/1_File_Q%26A.py)"
+    "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
+st.title("Interview Help")
 
 form = st.form("my_form")
 Company = form.text_input('Company', 'Google')
@@ -10,7 +19,11 @@ form.slider("Level of Experience")
 st.slider("Outside the form")
 
 # Now add a submit button to the form:
-form.form_submit_button("Submit")
+x=form.form_submit_button("Submit")
 
 
-st.write('The current movie title is', Role)
+
+if open_api_key and x:
+	print("submitted")
+
+#st.write('The current movie title is', Role)
