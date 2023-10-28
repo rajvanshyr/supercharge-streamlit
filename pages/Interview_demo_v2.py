@@ -50,6 +50,14 @@ def main():
 			)
 			reply = response['choices'][0]['message']['content']
 			st.write('The OpenAI response is', reply)
+			if st.button('Generate Questions'):
+			# Assume `reply` is the string containing the questions
+				questions = reply.split('\n\n')  # Split the string into a list of questions based on two newline characters
+		
+				for i, question in enumerate(questions, 1):
+					st.markdown(f'**Question {i}:** {question}')  # Display each question
+					user_answer = st.text_area(f'Your Answer for Question {i}')  # Create a text area for user to input their answer
+
 		except Exception as e:
 			st.error(f"An error occurred: {e}")
 
@@ -57,11 +65,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-
-	if st.button('Submit'):
-		# Assume `reply` is the string containing the questions
-		questions = reply.split('\n\n')  # Split the string into a list of questions based on two newline characters
-		
-		for i, question in enumerate(questions, 1):
-			st.markdown(f'**Question {i}:** {question}')  # Display each question
-			user_answer = st.text_area(f'Your Answer for Question {i}')  # Create a text area for user to input their answer
