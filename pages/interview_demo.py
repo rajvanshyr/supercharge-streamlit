@@ -34,8 +34,9 @@ if open_api_key and x:
 	llm = OpenAI(temperature=0.5,openai_api_key=o)
 	d=langchain.agents.load_tools(['wikipedia','serpapi'],llm)
 	os.environ["OPENAI_API_KEY"]=open_api_key
+	p1=f'Summarize what {Company} does in a simple way'
 	a=langchain.agents.initialize_agent(d,llm,verbose=True)
-	x=a.run("Summarize what Opsera does to a non-techincal person")
+	x=a.run(p1)
 	prom= f'I am interviewing as a {Role} position with the {Hm} at {Company}. \
 	What are the top 3 questions he is most likely to ask me? For reference this is a quick description of what they do {x}\
 	'
