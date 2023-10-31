@@ -32,7 +32,7 @@ def main():
 			a = langchain.agents.initialize_agent(d, llm, verbose=True)
 			x = a.run(p1)
 			prompt = f'I am interviewing as a {Role} position with the {Hm} at {Company}. What are the top 3 questions he is most likely to ask me? For reference, this is a quick description of what they do {x}'
-			st.write('The prompt output is', prompt)
+			#st.write('The prompt output is', prompt)
 			openai.api_key = open_api_key
 			response = openai.ChatCompletion.create(
 				model="gpt-4",
@@ -51,13 +51,16 @@ def main():
 			reply = response['choices'][0]['message']['content']
 			st.write('The OpenAI response is', reply)
 			questions = reply.split('\n\n')
-			if st.button('Generate Questions'):
+			form = st.form("my_form_2")
+			for i, question in enumerate(questions, 1):
+					st.markdown(f'**Question {i}:** {question}')  # Display each question
+					user_answer = st.text_area(f'Your Answer for Question {i}') 
+					answer = form.form_submit_button("answer")
+			#if st.button('Generate Questions'):
 			# Assume `reply` is the string containing the questions
 				#questions = reply.split('\n\n')  # Split the string into a list of questions based on two newline characters
 		
-				for i, question in enumerate(questions, 1):
-					st.markdown(f'**Question {i}:** {question}')  # Display each question
-					user_answer = st.text_area(f'Your Answer for Question {i}')  # Create a text area for user to input their answer
+ # Create a text area for user to input their answer
 
 		except Exception as e:
 			st.error(f"An error occurred: {e}")
