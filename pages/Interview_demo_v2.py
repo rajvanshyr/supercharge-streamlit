@@ -49,13 +49,13 @@ def main():
 				]
 			)
 			reply = response['choices'][0]['message']['content']
-			st.write('The OpenAI response is', reply)
+			#st.write('The OpenAI response is', reply)
 			questions = reply.split('\n\n')
 			form = st.form("my_form_2")
 			for i, question in enumerate(questions, 1):
 					st.markdown(f'**Question {i}:** {question}')  # Display each question
 					user_answer = st.text_area(f'Your Answer for Question {i}') 
-					answer = form.form_submit_button("answer")
+					#answer = form.form_submit_button("answer")
 			#if st.button('Generate Questions'):
 			# Assume `reply` is the string containing the questions
 				#questions = reply.split('\n\n')  # Split the string into a list of questions based on two newline characters
