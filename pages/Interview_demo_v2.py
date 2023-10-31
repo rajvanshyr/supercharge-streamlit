@@ -63,7 +63,7 @@ def main():
 		except Exception as e:
 			st.error(f"An error occurred: {e}")
 	else:
-    	if not open_api_key:
+		if not open_api_key:
 			st.warning('Please add your OpenAI API key to continue.')
  # Create a text area for user to input their answer
 
