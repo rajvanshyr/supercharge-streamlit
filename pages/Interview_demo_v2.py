@@ -60,7 +60,9 @@ def main():
 			#if st.button('Generate Questions'):
 			# Assume `reply` is the string containing the questions
 				#questions = reply.split('\n\n')  # Split the string into a list of questions based on two newline characters
-		
+	else:
+    	if not open_api_key:
+			st.warning('Please add your OpenAI API key to continue.')
  # Create a text area for user to input their answer
 
 		except Exception as e:
