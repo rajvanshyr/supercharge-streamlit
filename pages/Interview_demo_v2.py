@@ -50,9 +50,10 @@ def main():
 			)
 			reply = response['choices'][0]['message']['content']
 			st.write('The OpenAI response is', reply)
+			questions = reply.split('\n\n')
 			if st.button('Generate Questions'):
 			# Assume `reply` is the string containing the questions
-				questions = reply.split('\n\n')  # Split the string into a list of questions based on two newline characters
+				#questions = reply.split('\n\n')  # Split the string into a list of questions based on two newline characters
 		
 				for i, question in enumerate(questions, 1):
 					st.markdown(f'**Question {i}:** {question}')  # Display each question
