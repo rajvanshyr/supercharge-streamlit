@@ -31,7 +31,8 @@ def main():
 			p1 = f'Summarize what {Company} does in a simple way'
 			a = langchain.agents.initialize_agent(d, llm, verbose=True)
 			x = a.run(p1)
-			prompt = f'I am interviewing as a {Role} position with the {Hm} at {Company}. What are the top 3 questions he is most likely to ask me? For reference, this is a quick description of what they do {x}'
+			prompt = f'I am interviewing as a {Role} position with the {Hm} at {Company}.I have {experience_level} years of experience. \
+			What are the top 3 questions he is most likely to ask me? For reference, this is a quick description of what they do {x}'
 			#st.write('The prompt output is', prompt)
 			openai.api_key = open_api_key
 			response = openai.ChatCompletion.create(
