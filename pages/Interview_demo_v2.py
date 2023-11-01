@@ -57,11 +57,11 @@ def main():
 					st.markdown(f' {question}')  # Display each question
 					user_answer = st.text_area(f'Your Answer for Question {i}') 
 					btext='Hit me'+str(i)
-					f_name='my_form'+i
-					st.button(btext)
-					submit1 = form.form_submit_button("Submit1")
-					if submit1:
-						st.write('Ayyyyyy you clicked it my brotha')
+					#f_name='my_form'+i
+					# st.button(btext)
+					# submit1 = form.form_submit_button("Submit1")
+					# if submit1:
+					# 	st.write('Ayyyyyy you clicked it my brotha')
 
 
 
