@@ -54,7 +54,7 @@ def main():
 			questions = reply.split('\n\n')
 			form = st.form("my_form_2")
 			for i, question in enumerate(questions, 1):
-					st.markdown(f'** :** {question}')  # Display each question
+					st.markdown(f' {question}')  # Display each question
 					user_answer = st.text_area(f'Your Answer for Question {i}') 
 					#answer = form.form_submit_button("answer")
 			#if st.button('Generate Questions'):
