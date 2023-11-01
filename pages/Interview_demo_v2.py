@@ -20,7 +20,7 @@ def main():
 	Company = form.text_input('Company', 'Google')
 	Role = form.text_input('Position Interviewing For', 'Product Manager')
 	Hm = form.text_input('Position of Interviewer', 'Engineering Manager')
-	experience_level = form.slider("Level of Experience", 0, 10, 5)  # Assume experience level is from 0 to 10
+	experience_level = form.slider("Years of Experience", 0, 25, 5)  # Assume experience level is from 0 to 10
 	submit = form.form_submit_button("Submit")
 	
 	if open_api_key and submit:
@@ -54,7 +54,7 @@ def main():
 			questions = reply.split('\n\n')
 			form = st.form("my_form_2")
 			for i, question in enumerate(questions, 1):
-					st.markdown(f'**Question {i}:** {question}')  # Display each question
+					st.markdown(f'** :** {question}')  # Display each question
 					user_answer = st.text_area(f'Your Answer for Question {i}') 
 					#answer = form.form_submit_button("answer")
 			#if st.button('Generate Questions'):
