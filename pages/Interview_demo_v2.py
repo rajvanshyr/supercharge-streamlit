@@ -56,8 +56,12 @@ def main():
 			for i, question in enumerate(questions, 1):
 					st.markdown(f' {question}')  # Display each question
 					user_answer = st.text_area(f'Your Answer for Question {i}') 
-					btext='Hit me '+str(i)
+					btext='Hit me'+str(i)
 					st.button(btext)
+					if st.button(btext):
+						st.write('Ayyyyyy you clicked it my brotha')
+
+
 					#answer = form.form_submit_button("answer")
 			#if st.button('Generate Questions'):
 			# Assume `reply` is the string containing the questions
