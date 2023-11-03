@@ -73,7 +73,30 @@ def main():
 					# submit1 = form.form_submit_button("Submit1")
 					if st.button(btext):
 						st.session_state[btext] = not st.session_state[btext]
+
 						st.write('Ayyyyyy you clicked it my brotha')
+						prompt2 = f'Rank the answer in brackets to the question deliminated by the stars \
+						on a scale of 1-100: for someone interviewing as a {Role} at devops company.For \
+						reference, this is a quick description of what they do {x}: \n answer:*{user_answer}* \n \
+						question:*{question}*'
+						
+						st.write(prompt2)
+						response = openai.ChatCompletion.create(
+							model="gpt-4",
+							temperature=0,
+							messages=[
+							{
+								"role": "system",
+								"content": "You are a proficient AI with a specialty in critiquing interview answers",
+							},
+							{
+								"role": "user",
+								"content": prompt2
+						}
+						]
+						)
+						reply = response['choices'][0]['message']['content']
+						st.write(reply)
 
 					# 	st.write('Ayyyyyy you clicked it my brotha')
 
