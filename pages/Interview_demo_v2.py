@@ -24,6 +24,8 @@ def main():
 	#submit = form.form_submit_button("Submit")
 	if "Submit" not in st.session_state:
 		st.session_state["Submit"] = False
+	if "Hit me1" not in st.session_state:
+		st.session_state["Hit me1"] = False
 	if form.form_submit_button("Submit"):
 		st.session_state["Submit"] = not st.session_state["Submit"]
 
@@ -63,9 +65,12 @@ def main():
 					user_answer = st.text_area(f'	 Answer for Question {i}') 
 					btext='Hit me'+str(i)
 					#f_name='my_form'+i
-					st.button(btext)
+					#st.button(btext)
 					# submit1 = form.form_submit_button("Submit1")
-					# if submit1:
+					if st.button(btext):
+						st.session_state["btext"] = not st.session_state["btext"]
+						st.write('Ayyyyyy you clicked it my brotha')
+
 					# 	st.write('Ayyyyyy you clicked it my brotha')
 
 
