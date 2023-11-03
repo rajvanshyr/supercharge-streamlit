@@ -68,7 +68,7 @@ def main():
 					#st.button(btext)
 					# submit1 = form.form_submit_button("Submit1")
 					if st.button(btext):
-						st.session_state["btext"] = not st.session_state["btext"]
+						st.session_state[btext] = not st.session_state[btext]
 						st.write('Ayyyyyy you clicked it my brotha')
 
 					# 	st.write('Ayyyyyy you clicked it my brotha')
