@@ -21,9 +21,14 @@ def main():
 	Role = form.text_input('Position Interviewing For', 'Product Manager')
 	Hm = form.text_input('Position of Interviewer', 'Engineering Manager')
 	experience_level = form.slider("Years of Experience", 0, 25, 5)  # Assume experience level is from 0 to 10
-	submit = form.form_submit_button("Submit")
+	#submit = form.form_submit_button("Submit")
+	if "Submit" not in st.session_state:
+		st.session_state["Submit"] = False
+	if form.form_submit_button("Submit"):
+		st.session_state["Submit"] = not st.session_state["Submit"]
+
 	
-	if open_api_key and submit:
+	if open_api_key and st.session_state["Submit"]:
 		try:
 			llm = OpenAI(temperature=0.5, openai_api_key=open_api_key)
 			d = langchain.agents.load_tools(['wikipedia', 'serpapi'], llm)
