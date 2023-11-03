@@ -55,7 +55,7 @@ def main():
 			#form = st.form("my_form_2")
 			for i, question in enumerate(questions, 1):
 					st.markdown(f' {question}')  # Display each question
-					user_answer = st.text_area(f'Your Answer for Question {i}') 
+					user_answer = st.text_area(f'	 Answer for Question {i}') 
 					btext='Hit me'+str(i)
 					#f_name='my_form'+i
 					# st.button(btext)
@@ -74,6 +74,18 @@ def main():
 	else:
 		if not open_api_key:
 			st.warning('Please add your OpenAI API key to continue.')
+	if "Submit2" not in st.session_state:
+    	st.session_state["Submit2"] = False
+    if "button2" not in st.session_state:
+    	st.session_state["button2"] = False
+    if st.button("Submit2"):
+    	st.session_state["Submit2"] = not st.session_state["Submit2"]
+    if st.session_state["Submit2"]:
+    	if st.button("Button2"):
+        	st.session_state["button2"] = not st.session_state["button2"]
+        	st.write('Ayyyyyy you clicked it my brotha')
+
+
  # Create a text area for user to input their answer
 
 
