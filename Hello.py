@@ -34,8 +34,9 @@ def run():
         **👈 Select a demo from the sidebar** to see some examples
         of what I've built
         ### Want to get in touch?
-        - Reach out on Linkedin
-        - Check out my Medium
+        - I can build you a custom website or GPT https://72hq44eclv8.typeform.com/to/dxvjvmt8
+        - Check out my Medium Article https://medium.com/@rajvanshyr/supercharge-your-automated-customer-support-with-large-language-models-f0743e089ea2
+
     """
     )
 
