@@ -24,14 +24,14 @@ def run():
         page_icon="👋",
     )
 
-    st.write("# Welcome to Supercharge's AI Playgrounf! 👋")
+    st.write("# Welcome to Supercharge's AI Playground! 👋")
 
     st.sidebar.success("Select a demo above.")
 
     st.markdown(
         """
         **👈 Select a demo from the sidebar** to see some examples
-        of what we've I've built
+        of what we've built
         ### Want to Hire us?
         - I can build you a custom website or GPT https://72hq44eclv8.typeform.com/to/dxvjvmt8
 

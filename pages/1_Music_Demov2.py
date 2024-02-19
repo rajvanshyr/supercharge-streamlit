@@ -32,7 +32,7 @@ if st.button("Generate Music") and not st.session_state.music_generated:
     nS = syllables.estimate(txt)
     prom = f'Generate the next line for a rap song that ends with {word["word"]} and has {nS} syllables. Make sure to extract the theme and reference it in the line you generate for reference this is the previous line: {txt} . '
     response = openai.Completion.create(
-        engine="text-davinci-003",
+        engine="gpt-3.5-turbo-instruct",
         prompt=prom,
         temperature=0.6,
         max_tokens=60,
