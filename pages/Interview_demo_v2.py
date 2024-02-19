@@ -30,12 +30,12 @@ def main():
 	#submit = form.form_submit_button("Submit")
 	if "Submit" not in st.session_state:
 		st.session_state["Submit"] = False
-	if "Hit me1" not in st.session_state:
-		st.session_state["Hit me1"] = False
-	if "Hit me2" not in st.session_state:
-		st.session_state["Hit me2"] = False
-	if "Hit me3" not in st.session_state:
-		st.session_state["Hit me3"] = False
+	# if "Hit me1" not in st.session_state:
+	# 	st.session_state["Hit me1"] = False
+	# if "Hit me2" not in st.session_state:
+	# 	st.session_state["Hit me2"] = False
+	# if "Hit me3" not in st.session_state:
+	# 	st.session_state["Hit me3"] = False
 	if form.form_submit_button("Submit"):
 		st.session_state["Submit"] = not st.session_state["Submit"]
 
