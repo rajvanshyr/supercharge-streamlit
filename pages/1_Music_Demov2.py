@@ -23,14 +23,14 @@ st.title("📝 Music Generation")
 st.markdown(
         """
         Make lyrics like your favorite rappers!
-        Type a line below and then click generate to generate the next line!
+        Type a line below and then click the button to generate the next line!
 
     """
     )
 
 txt = st.text_area('Text to analyze')
 
-if st.button("Generate Music") and not st.session_state.music_generated:
+if st.button("Next Line") and not st.session_state.music_generated:
     openai.api_key = anthropic_api_key
     word_list = txt.split() 
     last = word_list[-1]
