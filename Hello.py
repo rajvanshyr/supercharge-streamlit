@@ -33,7 +33,7 @@ def run():
         **👈 Select a demo from the sidebar** to see some examples
         of what we've built
         ### Want to Hire us?
-        - I can build you a custom website or GPT https://72hq44eclv8.typeform.com/to/dxvjvmt8
+        - Get Started here! https://superchargeai.online/offerings/ 
 
     """
     )
