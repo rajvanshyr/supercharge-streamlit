@@ -17,6 +17,11 @@ with st.sidebar:
 
 # Title and file uploader
 st.title("📝 Meeting Summarization")
+st.markdown(
+        """
+        Need to summarize a meeting? 
+        Drop the wav file in below.(Currently only supports small wav files)
+    """)
 uploaded_file = st.file_uploader("Upload a Meeting File", type=("txt", "wav"))
 
 # Function to extract key points from transcription

@@ -8,7 +8,13 @@ import langchain.agents
 os.environ["SERPAPI_API_KEY"] = "99a28fd132fb487739324bbe3fa8fbf0a2dcebecd86cff841d4c79260aff5836"
 
 def main():
-	st.title("Interview Help")
+	st.title("Interview Prep Assistant")
+	st.markdown(
+        """
+        Need help prepping for an interview?
+        Give us some details below and we will generate practice questions!!
+    """
+    )
 
 	with st.sidebar:
 		open_api_key = st.text_input("OpenAI API Key", key="file_qa_api_key", type="password")
