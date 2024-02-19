@@ -24,16 +24,15 @@ def run():
         page_icon="👋",
     )
 
-    st.write("# Welcome to Streamlit's Portfolio Site!! 👋")
+    st.write("# Welcome to Supercharge's AI Playgrounf! 👋")
 
     st.sidebar.success("Select a demo above.")
 
     st.markdown(
         """
-        Raghav is a generative AI developer who is passionate about helping buisnesses implement use cases
         **👈 Select a demo from the sidebar** to see some examples
-        of what I've built
-        ### Want to get in touch?
+        of what we've I've built
+        ### Want to Hire us?
         - I can build you a custom website or GPT https://72hq44eclv8.typeform.com/to/dxvjvmt8
 
     """
