@@ -117,16 +117,16 @@ def main():
 	else:
 		if not open_api_key:
 			st.warning('Please add your OpenAI API key to continue.')
-	if "Submit2" not in st.session_state:
-		st.session_state["Submit2"] = False
-	if "button2" not in st.session_state:
-		st.session_state["button2"] = False
-	if st.button("Submit2"):
-		st.session_state["Submit2"] = not st.session_state["Submit2"]
-	if st.session_state["Submit2"]:
-		if st.button("Button2"):
-			st.session_state["button2"] = not st.session_state["button2"]
-			st.write('Ayyyyyy you clicked it my brotha')
+	# if "Submit2" not in st.session_state:
+	# 	st.session_state["Submit2"] = False
+	# if "button2" not in st.session_state:
+	# 	st.session_state["button2"] = False
+	# if st.button("Submit2"):
+	# 	st.session_state["Submit2"] = not st.session_state["Submit2"]
+	# if st.session_state["Submit2"]:
+	# 	if st.button("Button2"):
+	# 		st.session_state["button2"] = not st.session_state["button2"]
+	# 		st.write('Ayyyyyy you clicked it my brotha')
 
 
  # Create a text area for user to input their answer
