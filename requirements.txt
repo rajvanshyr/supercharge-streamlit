@@ -11,3 +11,4 @@ pydub
 langchain
 wikipedia
 google-search-results
+ffprobe
